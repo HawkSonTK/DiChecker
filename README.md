@@ -1,0 +1,4 @@
+# DiChecker
+M5StackCore2DiCheck用プログラム
+
+制御機器等のDiがショートしてるかどうかを検知するためのサンプルソース
