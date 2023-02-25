@@ -72,15 +72,18 @@ void loop() {
  
   nowImage = getNowInput( bitImage );
 
+  //状態変化があった場合のみ全体再表示
   if( oldImage != nowImage )
   {
     oldImage = nowImage ;
     M5.Spk.DingDong();
     M5.Lcd.clear(BLACK);
     M5.Lcd.setTextColor(WHITE);
+    //変化回数
     M5.Lcd.setTextFont(4);
     M5.Lcd.setCursor(10,30);
     M5.Lcd.printf("InputChangeCount[%d]\n",count++);
+    //最新のBIT表示 ONは黄色
     M5.Lcd.setTextFont(4);
     M5.Lcd.setCursor(10,60);
     M5.Lcd.printf("[NowState]");
@@ -92,6 +95,7 @@ void loop() {
       else           M5.Lcd.setTextColor(WHITE); 
       M5.Lcd.printf("%d ",bitImage[i]);
     }
+    //前回値のBIT表示 ONは黄色
     M5.Lcd.setTextFont(4);
     M5.Lcd.setTextColor(WHITE);
     M5.Lcd.setCursor(10,150);
